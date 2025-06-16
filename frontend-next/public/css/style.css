@@ -1,0 +1,521 @@
+/*main page body css*/
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center; 
+}
+
+ .mainPage, .postPage ,.signUp ,.logIn ,.createPost, .aboutUs,.comments,.profilePageSection,.theirProfilePageSection,.editPageSection{
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+    height: auto; /* Adjust based on content */
+    display: flex; /* Use flexbox for layout */
+}
+
+.left-sidebar {
+    left: 0; /* Align left sidebar to the left */
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    width: calc(100% - 300px); /* Full width minus both sidebars */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.logo-main {
+    margin: 0px 0 15px 50px; /* Reduced margin above the logo */
+}
+
+.logo-main img {
+    max-width: 150px; /* Control logo size */
+    max-height: 150px; /* Control logo size */
+}
+
+.buttons-main {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    max-width: 100px; /* Max width for buttons container */
+}
+
+.button-main {
+    background-color: #000000; /* Black button */
+    color: #ffffff; /* White text */
+    padding: 10px; /* Adjust padding for height */
+    margin-left: 10px;
+    text-align: center; /* Center text within button */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make button full width */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Match font size */
+}
+
+.button-side {
+    background-color: #1f1f1f;
+    color: #ffffff; /* White text */
+    padding: 10px; /* Adjust padding for height */
+    margin-left: 10px;
+    text-align: center; /* Center text within button */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    border: none; /* Remove border */
+    font-size: 1em; /* Match font size */
+}
+
+/*Post CSS*/
+.sidebar-post {
+    width: 150px;
+    background-color: #1f1f1f;
+    color: white;
+    position: fixed; /* Keep sidebar fixed */
+    height: 100vh; /* Full height */
+    padding-top: 20px; /* Space at the top */
+    z-index: 2;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.left-sidebar {
+    left: 0; /* Align left sidebar to the left */
+}
+
+.sidebar-post h2{
+    text-align: center;
+}
+
+.dropdown-post {
+    display: none; /* Initially hidden */
+    padding-left: 20px; /* Indent for sub-options */
+}
+
+textarea {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    border-color: #000000; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Glow effect on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Main container */
+.container-post {
+    margin-top: 10px;
+    padding: 20px; /* Padding for the container */
+    max-width: 500px; /* Max width for content */
+    margin-left: auto;
+    margin-right: auto;
+    background: #f4f4f4; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Container */
+.container-create {
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    width: calc(100% - 300px); /* Full width minus both sidebars */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Heading */
+h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Space below the heading */
+    color: #333;
+    text-align: center; /* Center the heading */
+    padding-right: 50px; /* Add space to the right of the text */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+/* Form Styles */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Label Styles */
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Input Styles */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    flex: 1; /* Allow equal flex growth */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width for the submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.feedback-message {
+    color: red;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%; /* Full width for feedback message */
+}
+
+.button-create{
+    background-color: #000000; /* Black button */
+    color: #ffffff; /* White text */
+    padding: 10px; /* Adjust padding for height */
+    text-align: center; /* Center text within button */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make button full width */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Match font size */
+    margin-bottom: 30px; /* Space below the button */
+    max-width: 300px; /* Max width for the button */
+}
+
+.button-create:hover {
+    background-color: #555555; /* Dark gray on hover */
+}
+
+.return-button:hover {
+    background-color: #555555; /* Dark gray on hover */
+}
+
+/* Container styles */
+.container-about {
+    margin-top: 10px;
+    padding: 20px; /* Padding for the container */
+    max-width: 800px; /* Max width for content */
+    background: #f4f4f4; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box-about {
+    padding: 20px;
+    width: 100%;
+}
+
+.comment-post {
+    background-color: #ffffff; /* White background for comments */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.return-button {
+    position: absolute; /* Position it relative to the body */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #000000; /* White background */
+    color: #ffffff; /* Black text */
+    border: 1px solid #000000; /* Light gray border */
+    padding: 8px 12px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.return-button:hover {
+    background-color: #555555; /* Dark gray on hover */
+}
+
+.material-icons {
+    cursor: pointer;
+    color: gray;
+}
+
+/* Chat Layout */
+.chat-container {
+    display: flex;
+    height: 80vh;
+    border: 1px solid #ccc;
+    padding-right: 50px;
+  }
+  
+  .chat-sidebar {
+    width: 25%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+  }
+  
+  .chat-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .chat-sidebar li {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .chat-sidebar li:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .chat-window {
+    flex-grow: 1;
+    overflow-y: scroll; /* Hide overflow to prevent scrollbars */
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    height: 150px;
+    max-height: 200px;
+    display: none;
+    flex-direction: column; 
+}
+
+  #chatForm {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ccc;
+  }
+  
+  #chatInput {
+    flex-grow: 1; /* Expand to take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #chatForm button {
+    padding: 10px 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .user-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  
+  .user-online {
+    background-color: #28a745;
+  }
+  
+  .user-offline {
+    background-color: #ccc;
+  }
+
+  /* User list styling */
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Status dot styles */
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.online {
+    background-color: green; /* ✅ Green dot for online users */
+}
+
+.offline {
+    background-color: gray; /* ⚪ Gray dot for offline users */
+}
+
+  /* Style for online user highlight in sidebar */
+.chat-sidebar li.online {
+    font-weight: bold;
+  }
+  
+  .chat-sidebar li .username {
+    flex-grow: 1;
+  }
+  
+  .chat-sidebar li .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  
+  .chat-sidebar li .status-dot.online {
+    background-color: #28a745;
+  }
+  
+  .chat-sidebar li .status-dot.offline {
+    background-color: #ccc;
+  }
+  
+  .messages-container {
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+.chat-message {
+    margin: 5px 0; /* Space between messages */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.my-message {
+    background-color: #d1e7dd; /* Light green for sent messages */
+    align-self: flex-end; /* Align to the right */
+    text-align: right; /* Right-align text */
+}
+
+.received-message {
+    background-color: #f8d7da; /* Light red for received messages */
+    align-self: flex-start; /* Align to the left */
+    text-align: left; /* Left-align text */
+}
+
+#errorContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center items */
+    width: calc(100% - 300px); /* Full width minus both sidebars */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; 
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Top section: avatar + follow stats */
+.profile-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+/* Avatar styling */
+.profile-top img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Followers/Following text */
+.follow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.follow p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.follow span {
+    font-weight: normal;
+}
+
+/* Buttons and containers */
+#editProfileButton, #followButton {
+    margin-bottom: 20px;
+    max-width: 200px;
+}
+

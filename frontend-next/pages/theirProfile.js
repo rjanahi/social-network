@@ -1,0 +1,37 @@
+import Head from 'next/head';
+
+export default function TheirProfile() {
+  return (
+    <>
+      <Head>
+        <title>Their Profile</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <script src="/js/posts.js" defer></script>
+        <script src="/js/likes.js" defer></script>
+        <script src="/js/comments.js" defer></script>
+        <script src="/js/socket.js" defer></script>
+        <script src="/js/session.js" defer></script>
+      </Head>
+      <section id="theirProfilePageSection">
+        <button className="return-button" onClick={() => window.location.href='/posts.html'}>Return</button>
+        <div className="container-main">
+          <div className="profile-top">
+            <img src="/css/logo.png" alt="Logo" />
+            <div className="follow">
+              <p id="profileUsername">Username</p>
+              <p>Followers: <span id="userFollowers">0</span></p>
+              <p>Following: <span id="userFollowing">0</span></p>
+            </div>
+          </div>
+          <button id="followButton" className="button-main">Follow</button>
+          <section id="postPageSection">
+            <div className="container-theirProfilePost">
+              <div id="postsContainer"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </>
+  );
+}
