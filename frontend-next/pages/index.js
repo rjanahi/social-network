@@ -16,10 +16,10 @@ export default function MainPage() {
             <img src="/css/logo.png" alt="Logo" />
           </div>
           <div className="center-buttons">
-            <button id="signUpButton" onClick={() => window.location.href='/signup'}>Sign Up</button>
+            <button id="signUpButton" onClick={() => window.location.href='/signUp'}>Sign Up</button>
             <button id="logInButton" onClick={() => window.location.href='/login'}>Log In</button>
-            <button id="postsButton" onClick={() => window.location.href='/posts'}>posts</button>
-            <button id="logoutButton" onClick={() => logout()}>Log Out</button>
+            <button id="postsButton" onClick={() => window.location.href='/posts'}>Enter Site</button>
+            <button id="logoutButton" onClick={() => window.location.href='/logout'}>Log Out</button>
           </div>
         </div>
       </section>

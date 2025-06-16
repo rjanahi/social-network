@@ -2,7 +2,7 @@ const loginForm = document.getElementById('loginForm');
 const loginSignUpButton = document.getElementById('signUpButtonLogin');
 
 
-if (loginSignUpButton) loginSignUpButton.addEventListener('click', () => window.location.href='/signup');
+if (loginSignUpButton) loginSignUpButton.addEventListener('click', () => window.location.href='/signUp');
 
  // Login form 
     if (loginForm) {

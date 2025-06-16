@@ -51,7 +51,7 @@ function checkSession() {
                     window.location.pathname !== "/mainPage" &&
                     window.location.pathname !== "/" &&
                     window.location.pathname !== "/login"&&
-                    window.location.pathname !== "/signup" &&
+                    window.location.pathname !== "/signUp" &&
                      window.location.pathname !== "/aboutUs"
                 ) {
                     window.location.href = '/'; // Redirect to main page

@@ -7,6 +7,7 @@ export default function MainPage() {
         <title>Main Page</title>
         <link rel="stylesheet" href="/css/style.css" />
         <script src="/js/socket.js" defer></script>
+        <script src="/js/main.js" defer></script>
         <script src="/js/session.js" defer></script>
       </Head>
       <section id="mainSection">

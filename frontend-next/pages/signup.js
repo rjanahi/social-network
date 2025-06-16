@@ -41,6 +41,7 @@ export default function SignUp() {
           </form>
         </div>
         <button className="return-button" onClick={() => window.location.href='/'}>Return</button>
+        <p>Already have an account?<button className="return-button" onClick={() => window.location.href='/login'}>Login</button></p>
       </section>
     </>
   );

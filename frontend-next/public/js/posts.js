@@ -1,6 +1,6 @@
 // posts.js
-const createPostButton = document.getElementById('createPostButton');
-const categoryButtons = document.querySelectorAll('#categoryOptions .button-side');
+// const createPostButton = document.getElementById('createPostButton');
+// const categoryButtons = document.querySelectorAll('#categoryOptions .button-side');
 const profilePageButton = document.getElementById('profilePageButton');
 const postsButton = document.getElementById('postsButton');
 
@@ -312,10 +312,10 @@ function loadTheirProfile(username,myUsername) {
         .catch(error => console.log(error));
 }
 
-function toggleDropdown(id) {
-    var dropdown = document.getElementById(id);
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
-}
+// function toggleDropdown(id) {
+//     var dropdown = document.getElementById(id);
+//     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     checkSession().then(() => {
@@ -356,15 +356,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.value; // Get the category from the button's value
-        history.pushState(null, '', `?${encodeURIComponent(category)}`);
-        loadCategoryPosts(category);
-    });
-});
+// categoryButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         const category = button.value; // Get the category from the button's value
+//         history.pushState(null, '', `?${encodeURIComponent(category)}`);
+//         loadCategoryPosts(category);
+//     });
+// });
 
-if (createPostButton) createPostButton.addEventListener('click', () => window.location.href = "/createPost");
+// if (createPostButton) createPostButton.addEventListener('click', () => window.location.href = "/createPost");
 
 if (profilePageButton) profilePageButton.addEventListener('click', () => {
     window.location.href = '/myProfile';

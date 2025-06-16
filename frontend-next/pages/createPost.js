@@ -1,40 +1,61 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 export default function CreatePost() {
+  useEffect(() => {
+    const scripts = [
+      "/js/createPost.js",
+      "/js/socket.js",
+      "/js/session.js"
+    ];
+    scripts.forEach(src => {
+      const s = document.createElement("script");
+      s.src = src;
+      s.defer = true;
+      document.body.appendChild(s);
+    });
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Create Post</title>
+        <title>Welcome Page</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/style.css" />
-        <script src="/js/createPost.js" defer></script>
-        <script src="/js/session.js" defer></script>
-        <script src="/js/socket.js" defer></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       </Head>
+
       <section id="createPostSection">
-        <button className="return-button" onClick={() => window.location.href='/posts'}>Return</button>
+        <button className="return-button" onClick={() => window.history.back()}>Return</button>
         <div className="container-create">
-          <form id="createPostForm">
-            <h2>Create a New Post</h2>
-            <p id="feedbackMessage" className="feedback-message"></p>
+          <h1>Create a New Post</h1>
+
+          <form id="createPostForm" method="POST">
             <label htmlFor="title">Title:</label>
-            <input type="text" id="title" required />
+            <input type="text" id="title" name="title" required />
+
             <label htmlFor="content">Content:</label>
-            <textarea id="content" required></textarea>
-            <label htmlFor="category">Category:</label>
-            <select id="category">
-              <option value="General">General</option>
-              <option value="Food">Food</option>
-              <option value="Nature">Nature</option>
-              <option value="Sport">Sport</option>
-              <option value="Travel">Travel</option>
-            </select>
-            <label htmlFor="privacy">Privacy:</label>
-            <select id="privacy">
-              <option value="public">Public</option>
-              <option value="almost_private">Almost Private</option>
-              <option value="private">Private</option>
-            </select>
-            <button type="submit" className="button-main">Submit Post</button>
+            <textarea id="content" name="content" rows="6" required></textarea>
+
+            <br /><br />
+            <label>Category:</label><br />
+
+            <label>
+              <input type="checkbox" name="category" value="Nature" /> Nature
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="Food" /> Food
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="Sport" /> Sport
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="Travel" /> Travel
+            </label>
+
+            <br /><br />
+            <input type="submit" value="Post it" className="button-create" />
           </form>
         </div>
       </section>
