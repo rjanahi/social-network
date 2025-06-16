@@ -15,7 +15,7 @@ export default function Login() {
             <h2>Login</h2>
             <p id="feedbackMessage" className="feedback-message"></p>
             <label>Email:</label>
-            <input type="email" id="email" required />
+            <input type="text" id="userOremail" required />
             <label>Password:</label>
             <input type="password" id="password" required />
             <button type="submit" className="button-main">Log In</button>

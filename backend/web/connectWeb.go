@@ -362,7 +362,7 @@ func ConnectWeb(db *sql.DB) {
 
 func mainPageHandler(w http.ResponseWriter, r *http.Request, db *sql.DB) {
 	// Serve the main page for all paths
-	tmpl, err := template.ParseFiles("templates/mainPage.html")
+	tmpl, err := template.ParseFiles("templates/mainPage")
 	if err != nil {
 		log.Printf("Error parsing template: %v", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
