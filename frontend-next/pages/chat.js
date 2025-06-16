@@ -28,7 +28,7 @@ export default function Chat() {
           </div>
           <div className="chat-main" id="chat-main">
             <div className="chat-header">
-              <button className="return-button" onClick={() => window.location.href='/posts.html'}>Return</button>
+              <button className="return-button" onClick={() => window.location.href='/posts'}>Return</button>
               <h3 id="chatWithLabel">Chat</h3>
             </div>
             <div id="chatWindow" className="chat-window">

@@ -1,5 +1,5 @@
 const returnToPost = document.getElementById("return-to-post");
-if (returnToPost) returnToPost.addEventListener('click', () => window.location.href='/posts.html');
+if (returnToPost) returnToPost.addEventListener('click', () => window.location.href='/posts');
 // Create form submission
 const createPostForm = document.getElementById('createPostForm');
 
@@ -35,7 +35,7 @@ if (createPostForm) {
                 socket.send(JSON.stringify({ type: "new_post" }));
                 socket.send(JSON.stringify({ from: userID, type: "notif" }));
 
-                window.location.href='/posts.html';
+                window.location.href='/posts';
             })
             .catch(error => console.log(error));
     });

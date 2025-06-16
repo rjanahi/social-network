@@ -15,12 +15,12 @@ let Chatusername;
 document.addEventListener('DOMContentLoaded', () => {
     checkSession();
     // Event listeners for navigation buttons
-    if (signUpButton) signUpButton.addEventListener('click', () => window.location.href='/signup.html');
-    if (logInButton) logInButton.addEventListener('click', () => window.location.href='/login.html');
+    if (signUpButton) signUpButton.addEventListener('click', () => window.location.href='/signup');
+    if (logInButton) logInButton.addEventListener('click', () => window.location.href='/login');
     if (postsButton) {
-        postsButton.addEventListener('click', () => window.location.href='/posts.html');
+        postsButton.addEventListener('click', () => window.location.href='/posts');
     }
-    if (aboutUsButton) aboutUsButton.addEventListener('click', () => window.location.href='/aboutUs.html');
+    if (aboutUsButton) aboutUsButton.addEventListener('click', () => window.location.href='/aboutUs');
 
     // Logout functionality
     if (logoutButton) {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     console.log(data.message);
                     checkSession(); // Refresh session check to update UI
-                    window.location.href='/mainPage.html'; // Redirect to main page after logout
+                    window.location.href='/mainPage'; // Redirect to main page after logout
                 })
                 .catch(error => console.log(error));
         });

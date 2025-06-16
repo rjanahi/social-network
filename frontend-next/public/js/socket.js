@@ -39,7 +39,7 @@ function connectWebSocket(userId) {
       return;
     }
     if (msg.type === "new_post") {
-      if (window.location.pathname === "/posts.html") {
+      if (window.location.pathname === "/posts") {
         loadPosts();
       }
       return;

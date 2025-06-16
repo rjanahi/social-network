@@ -14,9 +14,9 @@ export default function MyProfile() {
       <section id="myProfileSection">
         <div className="profile-container">
           <div className="profile-header">
-            <button className="return-button" onClick={() => window.location.href='/posts.html'}>Return</button>
+            <button className="return-button" onClick={() => window.location.href='/posts'}>Return</button>
             <h2>Welcome, <span id="profileUsername"></span></h2>
-            <button onClick={() => window.location.href='/editProfile.html'}>Edit Profile</button>
+            <button onClick={() => window.location.href='/editProfile'}>Edit Profile</button>
           </div>
           <div className="profile-posts">
             <div className="container-myProfilePost"></div>

@@ -42,7 +42,7 @@ function loadPosts() {
                 <p>${post.content}</p>
                 <small>
                 Posted by 
-                <button onclick="window.location.href='/theirProfile.html?user=${encodeURIComponent(post.username)}'">${post.username}</button>
+                <button onclick="window.location.href='/theirProfile?user=${encodeURIComponent(post.username)}'">${post.username}</button>
                 on ${post.createdAt}
                 </small>
                 <br>
@@ -63,7 +63,7 @@ function loadPosts() {
             });
 
             document.querySelectorAll('.commentsButton').forEach(button => {
-                button.addEventListener('click', () => window.location.href = '/comments.html?post_id=' + button.dataset.postId);
+                button.addEventListener('click', () => window.location.href = '/comments?post_id=' + button.dataset.postId);
             });
 
         })
@@ -114,7 +114,7 @@ function loadMyPosts(myUsername) {
                         <p>${post.content}</p>
                         <small>
                         Posted by 
-                        <button onclick="window.location.href='/theirProfile.html?user=${encodeURIComponent(post.username)}'">${post.username}</button>
+                        <button onclick="window.location.href='/theirProfile?user=${encodeURIComponent(post.username)}'">${post.username}</button>
                         on ${post.createdAt}
                         </small>
                         <br>
@@ -136,7 +136,7 @@ function loadMyPosts(myUsername) {
             });
 
             document.querySelectorAll('.commentsButton').forEach(button => {
-                button.addEventListener('click', () => window.location.href = '/comments.html?post_id=' + button.dataset.postId);
+                button.addEventListener('click', () => window.location.href = '/comments?post_id=' + button.dataset.postId);
             });
 
         })
@@ -214,7 +214,7 @@ function loadCategoryPosts(category) {
                 <p>${post.content}</p>
                 <small>
                 Posted by 
-                <button onclick="window.location.href='/theirProfile.html?user=${encodeURIComponent(post.username)}'">${post.username}</button>
+                <button onclick="window.location.href='/theirProfile?user=${encodeURIComponent(post.username)}'">${post.username}</button>
                 on ${post.createdAt}
                 </small>
                 <br>
@@ -234,7 +234,7 @@ function loadCategoryPosts(category) {
             });
 
             document.querySelectorAll('.commentsButton').forEach(button => {
-                button.addEventListener('click', () => window.location.href = '/comments.html?post_id=' + button.dataset.postId);
+                button.addEventListener('click', () => window.location.href = '/comments?post_id=' + button.dataset.postId);
             });
         })
         .catch(error => console.log(error));
@@ -246,8 +246,8 @@ function loadTheirProfile(username,myUsername) {
     console.log("Current username:", myUsername);
     // Check if the username matches the current user's username
     if (username == myUsername) {
-        console.log("Redirecting to myProfile.html for current user: ", myUsername);
-        window.location.href = '/myProfile.html';
+        console.log("Redirecting to myProfile for current user: ", myUsername);
+        window.location.href = '/myProfile';
         return;
     }
     const profileUsername = document.getElementById('profileUsername');
@@ -285,7 +285,7 @@ function loadTheirProfile(username,myUsername) {
                     <div class="comment-post">
                         <h2>${post.title}</h2>
                         <p>${post.content}</p>
-                        <small>Posted by <button onclick="window.location.href='/theirProfile.html?user=' + encodeURIComponent('${post.username}')">${post.username}</button> 
+                        <small>Posted by <button onclick="window.location.href='/theirProfile?user=' + encodeURIComponent('${post.username}')">${post.username}</button> 
                         on ${post.createdAt}</small><br>
                         <small>Category: ${post.categories.join(", ")}</small>
                         <br><br>
@@ -305,7 +305,7 @@ function loadTheirProfile(username,myUsername) {
             });
 
             document.querySelectorAll('.commentsButton').forEach(button => {
-                button.addEventListener('click', () => window.location.href = '/comments.html?post_id=' + button.dataset.postId);
+                button.addEventListener('click', () => window.location.href = '/comments?post_id=' + button.dataset.postId);
             });
 
         })
@@ -323,17 +323,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Current username:", myUsername);
         const path = window.location.pathname;
 
-        if (path === '/myProfile.html') {
+        if (path === '/myProfile') {
             loadMyPosts(myUsername);
             return;
         }
 
-        if (path === '/posts.html') {
+        if (path === '/posts') {
             loadPosts();
             return;
         }
 
-        if (path === '/theirProfile.html') {
+        if (path === '/theirProfile') {
             const params = new URLSearchParams(window.location.search);
             const theirUsername = params.get('user');
             console.log("Username from URL:", theirUsername);
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn("No matching handler for:", path);
     }).catch((err) => {
         console.error("Session check failed:", err);
-        window.location.href = '/login.html';
+        window.location.href = '/login';
     });
 });
 
@@ -364,10 +364,10 @@ categoryButtons.forEach(button => {
     });
 });
 
-if (createPostButton) createPostButton.addEventListener('click', () => window.location.href = "/createPost.html");
+if (createPostButton) createPostButton.addEventListener('click', () => window.location.href = "/createPost");
 
 if (profilePageButton) profilePageButton.addEventListener('click', () => {
-    window.location.href = '/myProfile.html';
+    window.location.href = '/myProfile';
 });
 
 if (postsButton) postsButton.addEventListener('click', () => {

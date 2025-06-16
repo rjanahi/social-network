@@ -11,7 +11,7 @@ export default function CreatePost() {
         <script src="/js/socket.js" defer></script>
       </Head>
       <section id="createPostSection">
-        <button className="return-button" onClick={() => window.location.href='/posts.html'}>Return</button>
+        <button className="return-button" onClick={() => window.location.href='/posts'}>Return</button>
         <div className="container-create">
           <form id="createPostForm">
             <h2>Create a New Post</h2>

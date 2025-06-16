@@ -11,7 +11,7 @@ export default function EditProfile() {
         <script src="/js/edit.js" defer></script>
       </Head>
       <section id="editPageSection">
-        <button className="return-button" onClick={() => window.location.href='/myProfile.html'}>Return</button>
+        <button className="return-button" onClick={() => window.location.href='/myProfile'}>Return</button>
         <div className="container-main">
           <div className="profile-top">
             <img src="/css/logo.png" alt="Logo" />

@@ -255,7 +255,7 @@ function openChatWith(userId, username) {
   document.getElementById(
     "chatWithLabel"
   ).textContent = `Chat with ${username}`;
-  window.location.href="/chat.html";
+  window.location.href="/chat";
 
   const chatForm = document.getElementById("chatForm");
   chatForm.style.display = "flex";
@@ -393,7 +393,7 @@ function updateUserListPeriodically() {
     if (openChatButton) {
         openChatButton.addEventListener('click', () => {
         loadAndInitChat(userID);
-            window.location.href='/chat.html';
+            window.location.href='/chat';
             loadAndInitChat(userID);
         });
     }

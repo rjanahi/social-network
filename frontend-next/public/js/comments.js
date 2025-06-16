@@ -1,7 +1,7 @@
 //  Comments.js - Handles loading and posting comments for a specific post
 const commentsSection = document.getElementById("commentsSection");
 let thisPostId = 0; // Initialize thisPostId to 0
- if (window.location.pathname === "/comments.html") {
+ if (window.location.pathname === "/comments") {
      const params = new URLSearchParams(window.location.search);
     thisPostId = parseInt(params.get('post_id'));
      console.log("Post ID from URL:", thisPostId);
@@ -9,7 +9,7 @@ let thisPostId = 0; // Initialize thisPostId to 0
         loadCommentsForPost();
     }
 document.addEventListener("DOMContentLoaded", function () {
-    if (window.location.pathname === "/comments.html") {
+    if (window.location.pathname === "/comments") {
         loadCommentsForPost();
     }
 
@@ -93,7 +93,7 @@ function loadCommentsForPost() {
 
             if (document.getElementById("return-to-posts")) {
                 document.getElementById("return-to-posts").addEventListener('click', () => {
-                    window.location.href = `/posts.html`;
+                    window.location.href = `/posts`;
                 });
             }
 

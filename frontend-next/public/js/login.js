@@ -2,7 +2,7 @@ const loginForm = document.getElementById('loginForm');
 const loginSignUpButton = document.getElementById('signUpButtonLogin');
 
 
-if (loginSignUpButton) loginSignUpButton.addEventListener('click', () => window.location.href='/signup.html');
+if (loginSignUpButton) loginSignUpButton.addEventListener('click', () => window.location.href='/signup');
 
  // Login form 
     if (loginForm) {
@@ -29,7 +29,7 @@ if (loginSignUpButton) loginSignUpButton.addEventListener('click', () => window.
                     // localStorage.setItem('username', data.username); // Store username in localStorage
                     checkSession(); // Refresh session check
                     loginForm.reset();
-                    window.location.href='/posts.html'; // Navigate to posts section
+                    window.location.href='/posts'; // Navigate to posts section
                     // loadPosts(); // Load posts after navigating to the posts section
                 } else {
                     const error =  document.getElementById("logerror")

@@ -19,7 +19,7 @@ export default function Login() {
             <label>Password:</label>
             <input type="password" id="password" required />
             <button type="submit" className="button-main">Log In</button>
-            <p>Don't have an account? <a href="/signUp.html">Sign up here</a></p>
+            <p>Don't have an account? <a href="/signup">Sign up here</a></p>
           </form>
         </div>
       </section>

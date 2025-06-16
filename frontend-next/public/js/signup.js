@@ -33,7 +33,7 @@
                     if (data.success) {
                         feedbackMessage.textContent = '';
                         registrationForm.reset();
-                        window.location.href='/login.html'; // Navigate to login section
+                        window.location.href='/login'; // Navigate to login section
                     }
                 })
                 .catch(error => {

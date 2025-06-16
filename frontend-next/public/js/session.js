@@ -27,8 +27,8 @@ function checkSession() {
                 
                 
 
-                if (window.location.pathname === "/chat.html") loadAndInitChat(data.userID);
-                if (window.location.pathname === "/mainPage.html" || window.location.pathname === "/") {
+                if (window.location.pathname === "/chat") loadAndInitChat(data.userID);
+                if (window.location.pathname === "/mainPage" || window.location.pathname === "/") {
                     if (signUpButton) signUpButton.style.display = "none";
                     if (logInButton) logInButton.style.display = "none";
                 }
@@ -39,7 +39,7 @@ function checkSession() {
             } else {
                 console.log(" User is not logged in.");
 
-                if (window.location.pathname === "/mainPage.html" || window.location.pathname === "/") {
+                if (window.location.pathname === "/mainPage" || window.location.pathname === "/") {
                     if (signUpButton) signUpButton.style.display = "inline-block";
                     if (logInButton) logInButton.style.display = "inline-block";
                 }
@@ -48,11 +48,11 @@ function checkSession() {
                 if (postsButton) postsButton.style.display = "none";
 
                 if (
-                    window.location.pathname !== "/mainPage.html" &&
+                    window.location.pathname !== "/mainPage" &&
                     window.location.pathname !== "/" &&
-                    window.location.pathname !== "/login.html"&&
-                    window.location.pathname !== "/signup.html" &&
-                     window.location.pathname !== "/aboutUs.html"
+                    window.location.pathname !== "/login"&&
+                    window.location.pathname !== "/signup" &&
+                     window.location.pathname !== "/aboutUs"
                 ) {
                     window.location.href = '/'; // Redirect to main page
                 }

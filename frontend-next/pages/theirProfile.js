@@ -14,7 +14,7 @@ export default function TheirProfile() {
         <script src="/js/session.js" defer></script>
       </Head>
       <section id="theirProfilePageSection">
-        <button className="return-button" onClick={() => window.location.href='/posts.html'}>Return</button>
+        <button className="return-button" onClick={() => window.location.href='/posts'}>Return</button>
         <div className="container-main">
           <div className="profile-top">
             <img src="/css/logo.png" alt="Logo" />

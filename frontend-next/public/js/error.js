@@ -16,25 +16,25 @@ function errorPage(errNum) {
       // Show the error section based on the error number
       switch (errNum) {
         case 400:
-          window.location.href="/error.html";
+          window.location.href="/error";
           errorContainer.innerHTML =
             "<h1>400 Bad Request</h1><p>Your request could not be understood.</p>";
           isErrorState = true;
           break;
         case 404:
-          window.location.href="/error.html";
+          window.location.href="/error";
           errorContainer.innerHTML =
             "<h1>404 Not Found</h1><p>The resource you are looking for could not be found.</p>";
           isErrorState = true;
           break;
         case 500:
-          window.location.href="/error.html";
+          window.location.href="/error";
           errorContainer.innerHTML =
             "<h1>500 Internal Server Error</h1><p>Something went wrong.</p>";
           isErrorState = true;
           break;
         default:
-          window.location.href="/error.html";
+          window.location.href="/error";
           errorContainer.innerHTML =
             "<h1>404 Not Found</h1><p>The resource you are looking for could not be found.</p>";
           isErrorState = true;

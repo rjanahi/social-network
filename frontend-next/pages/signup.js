@@ -26,8 +26,6 @@ export default function SignUp() {
               <input type="text" id="lname" name="lname" required />
               <label htmlFor="age">Age:</label>
               <input type="number" id="age" name="age" min="1" max="120" required />
-            </div>
-            <div className="form-group">
               <label htmlFor="gender">Gender:</label>
               <select id="gender" name="gender" required>
                 <option value="" disabled>Select your gender</option>
