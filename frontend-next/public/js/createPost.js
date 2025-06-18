@@ -1,5 +1,5 @@
 const returnToPost = document.getElementById("return-to-post");
-if (returnToPost) returnToPost.addEventListener('click', () => window.location.href='/posts');
+if (returnToPost) returnToPost.addEventListener('click', () => window.location.href = '/posts');
 // Create form submission
 const createPostForm = document.getElementById('createPostForm');
 
@@ -32,10 +32,11 @@ if (createPostForm) {
                 console.log(data.success ? "Post created successfully!" : "Error: " + data.message);
                 if (data.success) createPostForm.reset();
                 const socket = window.getSocket?.();
-                socket.send(JSON.stringify({ type: "new_post" }));
-                socket.send(JSON.stringify({ from: userID, type: "notif" }));
-
-                window.location.href='/posts';
+                if (socket && socket.readyState === WebSocket.OPEN) {
+                    socket.send(JSON.stringify({ type: "new_post" }));
+                    // socket.send(JSON.stringify({ from: userID, type: "notif" }));
+                }
+                window.location.href = '/posts';
             })
             .catch(error => console.log(error));
     });

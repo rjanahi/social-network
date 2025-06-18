@@ -2,19 +2,6 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 export default function CreatePost() {
-  useEffect(() => {
-    const scripts = [
-      "/js/createPost.js",
-      "/js/socket.js",
-      "/js/session.js"
-    ];
-    scripts.forEach(src => {
-      const s = document.createElement("script");
-      s.src = src;
-      s.defer = true;
-      document.body.appendChild(s);
-    });
-  }, []);
 
   return (
     <>
@@ -24,6 +11,9 @@ export default function CreatePost() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/style.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <script src="/js/session.js" defer></script>
+        <script src="/js/socket.js" defer></script> 
+        <script src="/js/createPost.js" defer></script>
       </Head>
 
       <section id="createPostSection">

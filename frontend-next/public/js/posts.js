@@ -72,7 +72,11 @@ function loadPosts() {
 
 //load only user posts
 function loadMyPosts(myUsername) {
-
+    console.log("Loading my posts for username:", myUsername);
+    if (!myUsername) {
+        console.error("No username provided for loading posts.");
+        return;
+    }
     const myProfileUsername = document.getElementById('myProfileUsername');
     myProfileUsername.innerHTML = myUsername;
 
@@ -142,7 +146,7 @@ function loadMyPosts(myUsername) {
         })
         .catch(error => console.log(error));
 
-    
+
     fetch("http://localhost:8080/editGet/" + myUsername, {
         method: 'GET',
         headers: {
@@ -156,14 +160,14 @@ function loadMyPosts(myUsername) {
             }
             return response.json();
         })
-        .then(profile => { 
+        .then(profile => {
             document.getElementById('profileBio').innerHTML = profile.bio || 'No bio available.';
             console.log("Profile Bio: ", profile.bio);
         })
         .catch(error => {
             console.error('Error fetching user bio:', error);
         });
-    
+
 }
 
 //load posts with specific category
@@ -241,7 +245,7 @@ function loadCategoryPosts(category) {
 }
 
 //load another user's posts
-function loadTheirProfile(username,myUsername) {
+function loadTheirProfile(username, myUsername) {
     console.log("Loading profile for username:", username);
     console.log("Current username:", myUsername);
     // Check if the username matches the current user's username
@@ -312,18 +316,29 @@ function loadTheirProfile(username,myUsername) {
         .catch(error => console.log(error));
 }
 
-// function toggleDropdown(id) {
-//     var dropdown = document.getElementById(id);
-//     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
-// }
+function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     checkSession().then(() => {
         const myUsername = mycurrentUsername();
         console.log("Current username:", myUsername);
         const path = window.location.pathname;
+        console.log("Current path from posts.js:", path);
+        const current = new URLSearchParams(window.location.search);
+        console.log("Current search params:", current.toString());
+
+        if (current.toString().includes('category=')) {
+            {
+                loadCategoryPosts(current.get('category'));
+                return;
+            }
+        }
 
         if (path === '/myProfile') {
+            console.log("Loading my profile for username:", myUsername);
             loadMyPosts(myUsername);
             return;
         }
@@ -343,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            loadTheirProfile(theirUsername,myUsername);
+            loadTheirProfile(theirUsername, myUsername);
             return;
         }
 
@@ -354,17 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '/login';
     });
 });
-
-
-// categoryButtons.forEach(button => {
-//     button.addEventListener('click', () => {
-//         const category = button.value; // Get the category from the button's value
-//         history.pushState(null, '', `?${encodeURIComponent(category)}`);
-//         loadCategoryPosts(category);
-//     });
-// });
-
-// if (createPostButton) createPostButton.addEventListener('click', () => window.location.href = "/createPost");
 
 if (profilePageButton) profilePageButton.addEventListener('click', () => {
     window.location.href = '/myProfile';

@@ -52,6 +52,7 @@ body {
     color: #ffffff; /* White text */
     padding: 10px; /* Adjust padding for height */
     margin-left: 10px;
+    margin-bottom: 10px;
     text-align: center; /* Center text within button */
     text-decoration: none; /* Remove underline */
     cursor: pointer;

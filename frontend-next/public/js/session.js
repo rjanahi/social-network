@@ -22,11 +22,8 @@ function checkSession() {
 
             if (data.loggedIn && typeof data.userID !== "undefined") {
                 console.log(" User is logged in:", data.userID);
-                
-                    currentusername = data.username;
-                
-                
-
+                localStorage.setItem('username', data.username);
+                currentusername = data.username;
                 if (window.location.pathname === "/chat") loadAndInitChat(data.userID);
                 if (window.location.pathname === "/mainPage" || window.location.pathname === "/") {
                     if (signUpButton) signUpButton.style.display = "none";
@@ -80,6 +77,7 @@ function logout() {
 }
 
 function mycurrentUsername() {
+    console.log("Sending username:", currentusername);
     return currentusername;
 }
 

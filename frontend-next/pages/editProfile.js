@@ -2,22 +2,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 
 export default function EditProfile() {
-  useEffect(() => {
-    const sessionScript = document.createElement("script");
-    sessionScript.src = "/js/session.js";
-    sessionScript.defer = true;
-    document.body.appendChild(sessionScript);
-
-    const socketScript = document.createElement("script");
-    socketScript.src = "/js/socket.js";
-    socketScript.defer = true;
-    document.body.appendChild(socketScript);
-
-    const editScript = document.createElement("script");
-    editScript.src = "/js/edit.js";
-    editScript.defer = true;
-    document.body.appendChild(editScript);
-  }, []);
+ 
 
   return (
     <>
@@ -27,6 +12,9 @@ export default function EditProfile() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/style.css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <script src="/js/edit.js" defer></script>
+        <script src="/js/socket.js" defer></script>
+        <script src="/js/session.js" defer></script>
       </Head>
 
       <section id="editPageSection">

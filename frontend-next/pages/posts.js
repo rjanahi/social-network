@@ -28,7 +28,7 @@ export default function Posts() {
           <br />
           <h2>Filter</h2>
           <br />
-          <button className="button-side" onClick={() => document.getElementById('categoryOptions').classList.toggle('show')}>
+          <button className="button-side" onClick={() => toggleDropdown('categoryOptions')}>
             Categories
           </button>
           <div className="dropdown-post" id="categoryOptions">
@@ -40,7 +40,7 @@ export default function Posts() {
           </div>
           <br />
           <button className="button-side" onClick={() => goTo('/mainPage')}>Main</button><br />
-          <button id="postsButton" className="button-side">Posts</button><br />
+          <button id="postsButton" className="button-side" onClick={()=> window.history.pushState(null, '', '/posts')} >Posts</button><br />
           <button className="button-side" onClick={() => goTo('/myProfile')}>Profile</button><br />
           <button className="button-side" onClick={() => goTo('/chat')}>Chat</button><br />
           <button id="logoutButton" className="button-side" onClick={() => window.logout?.()}>Logout</button>
