@@ -1,0 +1,286 @@
+/* ================================
+   MODERN BUTTON SYSTEM
+   ================================ */
+
+/* Base Button */
+.btn,
+.button-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: 600;
+  font-family: var(--font-family-body);
+  text-align: center;
+  transition: all var(--transition-fast);
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn::before,
+.button-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-normal);
+}
+
+.btn:hover:not(:disabled)::before,
+.button-modern:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.btn:hover:not(:disabled),
+.button-modern:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn:active:not(:disabled),
+.button-modern:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Primary Button */
+.btn-primary,
+.create-button-modern {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    min-width: 120px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.btn-primary:hover:not(:disabled),
+.create-button-modern:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+}
+
+/* Secondary Button */
+.btn-secondary,
+.cancel-button-modern {
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    min-width: 120px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:hover:not(:disabled),
+.cancel-button-modern:hover:not(:disabled) {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Button */
+.btn-success {
+  background: var(--accent-success);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success:hover:not(:disabled) {
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+/* Danger Button */
+.btn-danger {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Warning Button */
+.btn-warning {
+  background: var(--accent-warning);
+  color: var(--gray-800);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-warning:hover:not(:disabled) {
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn.btn-disabled,
+.button-modern:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn:disabled::before,
+.btn.btn-disabled::before,
+.button-modern:disabled::before {
+  display: none;
+}
+
+/* Button Sizes */
+.btn-sm,
+.button-modern-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-lg);
+}
+
+.btn-lg,
+.button-modern-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  border-radius: var(--radius-2xl);
+}
+
+/* Modern Button Group */
+.button-group-modern {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  justify-content: flex-end;
+  padding: 0 24px 24px;
+}
+
+/* Back Button */
+.back-button-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button-modern:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.back-button-modern svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Image preview action buttons (Remove / Replace) — compact, icon-friendly */
+.image-action-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.image-action-group .image-action-btn {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  gap: 8px;
+  box-shadow: 0 6px 12px rgba(16,24,40,0.06);
+  min-width: 92px; /* wider so text doesn't wrap */
+  height: 44px;
+  align-items: center;
+  white-space: nowrap; /* prevent label wrapping under icon */
+  text-align: center;
+}
+
+.image-action-group .image-action-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.image-action-group .image-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(16,24,40,0.08);
+}
+
+/* Make sure filename and action buttons are separated and do not overlap */
+.create-post-form-container .flex-1 .truncate,
+.create-post-form-container .flex-1 p {
+  margin-bottom: 8px;
+}
+
+.create-post-form-container .flex-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Purple Replace button (icon + text) - small, matches primary color */
+.image-action-replace {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  border-color: rgba(118,75,162,0.2) !important;
+  box-shadow: 0 10px 28px rgba(118,75,162,0.18);
+}
+
+.image-action-replace svg {
+  stroke: white;
+  fill: white;
+}
+
+/* Remove button uses white background but purple text/border to match theme */
+.image-action-remove {
+  background: white;
+  color: #6d5ce8 !important;
+  border-color: rgba(109,92,232,0.14) !important;
+  box-shadow: 0 6px 18px rgba(109,92,232,0.06);
+}
+
+.image-action-remove svg {
+  stroke: #6d5ce8;
+  fill: none;
+}
+
+/* Ensure Create Post / Cancel buttons align and share height */
+.create-post-page .create-post-form-container .flex.flex-row {
+  align-items: center;
+}
+
+.create-post-page .create-post-form-container .flex.flex-row .btn {
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 0 20px;
+}
+
+.create-post-page .create-post-form-container .flex.flex-row .btn.btn-primary {
+  min-width: 200px;
+}
+
+.create-post-page .create-post-form-container .flex.flex-row .btn.btn-secondary {
+  min-width: 120px;
+}
