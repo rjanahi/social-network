@@ -1,0 +1,50 @@
+/* ================================
+   NAVIGATION & LAYOUT STYLES
+   ================================ */
+
+/* Main Layout Structure */
+
+/* Layout Container */
+.layout-container {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+             radial-gradient(ellipse at bottom, rgba(168, 237, 234, 0.15) 0%, transparent 50%),
+             linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%, #f8fafc 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  min-height: calc(100vh - 80px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Page Wrapper */
+.page-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  position: relative;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-8);
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-4);
+  }
+  
+  .page-wrapper {
+    padding: 0 var(--space-4);
+  }
+}

@@ -1,0 +1,28 @@
+/* Design System Foundation */
+@import './theme.css';           /* Consolidated Design Tokens */
+@import './tokens.css';          /* CSS Variables and Design Tokens */
+@import './globals.css';         /* Global Reset and Base Styles */
+
+/* Core Layout and Structure */
+@import './layout.css';          /* Main Layout Components */
+@import './navigation.css';      /* Navigation and Header */
+
+/* Core Components */
+@import './components.css';      /* Common UI Components */
+@import './modern-buttons.css';  /* Button System */
+@import './forms.css';          /* Form Controls */
+@import './cards.css';          /* Card Components */
+
+/* Feature Components */
+@import './groups-modern.css';    /* Group Features */
+@import './posts.css';           /* Post Components */
+@import './comments.css';        /* Comment System */
+@import './chat.css';           /* Chat Interface */
+@import './profile.css';        /* Profile Pages */
+
+/* UI Components and Overlays */
+@import './modals.css';         /* Modal Windows */
+@import './dashboard.css';      /* Dashboard Components */
+
+/* Utilities and Enhancements */
+@import './animations.css';      /* Animation Library */

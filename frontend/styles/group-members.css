@@ -1,0 +1,60 @@
+/* Group Members */
+.group-members-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+
+.group-member-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.group-member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--gray-300);
+}
+
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.member-role {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .group-members-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 16px;
+  }
+}

@@ -1,0 +1,107 @@
+/* ================================
+   NAVIGATION STYLES
+   ================================ */
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--space-4) 0;
+    /* Make the navbar fixed so it stays visible on scroll for all environments */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space-8);
+}
+
+/* When navbar is fixed, ensure the main content is offset so it isn't hidden under the bar */
+.main-content {
+    padding-top: 72px; /* matches approx height of the navbar (adjust if needed) */
+}
+
+.nav-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: var(--text-base);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.nav-welcome {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn {
+    background-color: var(--error-500);
+    color: white;
+    border: none;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background-color: var(--error-600);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}

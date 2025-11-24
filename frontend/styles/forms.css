@@ -1,0 +1,233 @@
+/* ================================
+   FORM AND INPUT STYLES
+   ================================ */
+
+/* Form Container */
+form {
+  background: white;
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  border: 1px solid var(--gray-100);
+  max-width: 600px;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-primary);
+}
+
+/* Label Styles */
+label {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--gray-800);
+  display: block;
+  text-align: left;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-6);
+  width: 100%;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-4);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-1);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+  background: var(--gray-50);
+  font-family: var(--font-family-body);
+  font-weight: 500;
+  position: relative;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-500);
+  background: white;
+  box-shadow: 0 0 0 4px var(--primary-100);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="file"]:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--gray-300);
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Textarea */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: var(--font-family-body);
+  line-height: 1.6;
+}
+
+/* Select */
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23667eea' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right var(--space-3) center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-right: var(--space-10);
+  appearance: none;
+}
+
+/* Style the dropdown options */
+select option {
+  padding: 12px 16px;
+  background: white;
+  color: #374151;
+}
+
+select option:hover,
+select option:focus {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  color: #667eea;
+}
+
+select option:checked {
+  background: linear-gradient(135deg, #e9d5ff 0%, #ddd6fe 100%);
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* File Input */
+input[type="file"] {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+input[type="file"]:hover {
+  background: transparent;
+}
+
+/* Hide file input when using custom styling */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Hide the default file input button completely */
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+/* Error Messages */
+.feedback-message,
+.editProfileMessage {
+  color: var(--error-600);
+  background: var(--error-50);
+  border: 2px solid var(--error-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.feedback-message.success,
+.editProfileMessage.success {
+  color: var(--success-600);
+  background: var(--success-50);
+  border-color: var(--success-200);
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: var(--space-6);
+    margin: 0 var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+}
+
+/* ================================
+   CREATE POST PAGE STYLES
+   ================================ */
+
+.create-post-hero {
+  text-align: center;
+  padding: 40px 20px 32px;
+  position: relative;
+}
+
+.create-post-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  font-family: var(--font-family-display);
+}
+
+.create-post-form-container {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto 40px;
+  position: relative;
+  overflow: hidden;
+}
